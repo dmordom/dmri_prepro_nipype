@@ -177,7 +177,7 @@ def trackwait(subject_ID, chunk_nr, output_dir,postfix=''):
                 break
             #end if
         #end for
-        time.sleep(60) 
+        time.sleep(10) 
     #end while
     call("gzip -f "+script_dir+"/[lr]h_chunks/logs/op_chunk_*.error", shell=True)
     print("All tracks finished! continuing workflow...\n")

@@ -167,9 +167,10 @@ def do_p4_postpro(subject_ID, freesurfer_dir, workflow_dir, output_dir, tract_nu
     interface_final_right.inputs.outfile_prefix = subject_ID + '_interface_final_right'
     dmripipeline.connect([(index_pruned_right, interface_final_right, [("out_file", "interface_file")])])
     
-    tree_roi_left = pe.Node(interface=Function(input_names=["interface_file", "out_filename", "use_sample"], output_names=["out_file"], function=write_tree_roi), name='75c_tree_roi_left')
+    tree_roi_left = pe.Node(interface=Function(input_names=["interface_file", "out_filename", "tract_number", "use_sample"], output_names=["out_file"], function=write_tree_roi), name='75c_tree_roi_left')
     tree_roi_left.inputs.out_filename = subject_ID + '_hclust_roi_left.txt'
     tree_roi_left.inputs.use_sample = use_sample
+    tree_roi_left.inputs.tract_number = tract_number
     tree_roi_left.run_without_submitting = True
     dmripipeline.connect(index_pruned_left,"out_file", tree_roi_left, "interface_file")
 

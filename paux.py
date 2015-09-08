@@ -216,7 +216,7 @@ def get_voxels(interface_file,outfile_prefix):
 """
 writes seed voxels in a format to be read by the tree building tool
 """
-def write_tree_roi(interface_file, out_filename, use_sample=False):
+def write_tree_roi(interface_file, out_filename, tract_number, use_sample=False):
     import os
     import numpy as np
     import nibabel as nb
@@ -257,6 +257,9 @@ def write_tree_roi(interface_file, out_filename, use_sample=False):
         roi_file.write("#imagesize\n")
         roi_file.write(str(dimensions[0])+" "+str(dimensions[1])+" "+str(dimensions[2])+" nifti\n")
         roi_file.write("#endimagesize\n\n")
+        roi_file.write("#streams\n")
+        roi_file.write(str(tract_number)+"\n")
+        roi_file.write("#endstreams\n\n")
         roi_file.write("#trackindex\n")
         for index in finalIndexList:
             roi_file.write(str(index)+"\n")
