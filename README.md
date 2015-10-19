@@ -1,6 +1,14 @@
 # dmri_prepro_nipype
 dMRI data preprocessing and single seed voxel tracking pipeline
 
+#### Related Publications:
+
+Moreno-Dominguez, D., Watanabe, A., Gorgolewski, K. J., Schäfer, A., Goulas, A., Kipping, J., Kanaan, A. S., Anwander, A., Toro, R., & Margulies, D. S. (2014). Multi-modal parcellation of the frontal lobe. Poster presented at 20th Annual Meeting of the Organization for Human Brain Mapping (OHBM), Hamburg, Germany.
+
+http://pubman.mpdl.mpg.de/pubman/item/escidoc:2039365:4/component/escidoc:2039364/Moreno-Dominguez_OHBM2014.pdf
+
+#### Usage:
+
 This pipeline accepts an input folder with the following scan files:
 t1.nii.gz (the t1 image)
 data.nii.gz (the dmri data)
@@ -8,8 +16,6 @@ bvecs (the scan directions)
 bvals (the b values)
 
 And performs preprocesing in order to obtain freesurfer surfaces, quality white matter masks and gm/wm interface, single seed voxel tractography and projection from seed voxels to freesurfer surface points.
-
-================================================================
 
 Requirements before running:
 
