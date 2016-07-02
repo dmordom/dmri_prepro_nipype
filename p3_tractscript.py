@@ -65,7 +65,7 @@ def script_tracking(subject_ID, chunk_nr, output_dir, tract_number,tract_step, i
         np.savetxt(temp_roi_filename, np.array(all_seed_voxels), fmt='%d', delimiter=' ')
         
         temp_trackid_filename = "/tmp/"+subject_ID + "_treetrackids_" + side_string + ".txt"
-        trackid_array = np.arange(all_seed_voxels.shape[0])
+        trackid_array = np.arange(len(all_seed_voxels))
         np.savetxt(temp_trackid_filename, trackid_array, fmt='%d', delimiter='\n')
 
     
